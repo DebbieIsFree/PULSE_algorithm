@@ -1,0 +1,26 @@
+dx = [2, 2, -2, -2, 1, -1, 1, -1]
+dy = [1, -1, 1, -1, -2, -2, 2, 2]
+
+Rows = ['a','b','c','d','e','f','g','h']
+count = 0
+
+# 8 * 8이므로 (0,0) ~ (7,7)로 만들기
+
+cur = input()
+x = cur[0]           # 열 : a ~ h
+y = int(cur[1]) - 1  # 행 : 1 ~ 8  --> 0 ~ 7로 변경
+
+for i in range(8):
+    if x == Rows[i]:
+        x = i
+
+for j in range (8):
+    xx = x + dx[j]
+    yy = y + dy[j]
+
+    if xx < 0 or xx > 7 or yy < 0 or yy >7 :
+        continue
+    count += 1
+
+print(count)
+
