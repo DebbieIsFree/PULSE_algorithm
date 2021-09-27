@@ -1,6 +1,10 @@
 ## 누적합 (Prefix Sum) 
 ### BOJ 20002 - 사과나무      <https://www.acmicpc.net/problem/20002>
 
+1차원 배열 arr : 
+| | | | | ... | | | |
+
+
 
 * 좌표 (1,1)부터 (N,N)까지 총이익 map[x][y] 입력받기
 * (1,1) ~ (x,y)까지 각각의 '누적합' DP[x][y] 구하기
