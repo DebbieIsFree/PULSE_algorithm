@@ -1,19 +1,21 @@
-## 깃 튜토리얼
+# [누적합] 
+## BOJ 20002 - 사과나무 
+
+(https://www.acmicpc.net/problem/20002)
 
 소스코드 블록은 다음과 같이 작성할 수 있습니다.
 
-```c
-#include <stdio.h>
 
-int main(void) {
-  printf("Hello World!");
-  return 0;
-}
+// (1,1) ~ (x,y)까지 각각의 '누적합' 구하기
+```
+	for (int x = 1; x <= N; x++) {
+		for (int y = 1; y <= N; y++) {
+			cin >> map[x][y];
+			DP[x][y] = DP[x - 1][y] + DP[x][y - 1] - DP[x - 1][y - 1] + map[x][y];	// (1,1)부터 (x,y)까지의 누적합 구하기
+		}
+	}
 ```
 
-링크는 다음과 같이 작성할 수 있습니다.
-
-[블로그 주소](https://blog.naver.com/ndb796)
 
 순서 없는 목록은 다음과 같이 작성할 수 있습니다.
 
