@@ -1,1 +1,37 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
+// vector로 하면 sort할 때 편리한데, 그러면 이분탐색할 때 처음과 끝 인덱스를
+// 어떻게 넘겨줘야 할지 곤란하다고 판단해서 그냥 배열 사용
+// 그리고 data가 200,000이라서 배열 사용해도 시간초과 없음...(?ㅎㅎ)
+
+int location[200001];
+int N, C;
+
+int	BinarySearch(int start, int end) {
+	if (start > end || C == 0)		// 시작점이 끝을 초과  or 공유기를 다 설치
+		return 0;
+
+	int mid = (start + end) / 2;
+
+	
+}
+
+
+
+int main() {
+	//int N, C;
+	cin >> N >> C;
+
+	for (int i = 0; i < N; i++) {
+		cin >> location[i];
+	}
+
+	sort(location, location + N);
+	
+	//reverse(location, location + N);
+
+
+	return 0;
+}
