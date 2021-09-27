@@ -1,7 +1,5 @@
-# 누적합 (Prefix Sum) 
-## BOJ 20002 - 사과나무 
-
-<https://www.acmicpc.net/problem/20002>
+## 누적합 (Prefix Sum) 
+### BOJ 20002 - 사과나무      <https://www.acmicpc.net/problem/20002>
 
 
 * 좌표 (1,1)부터 (N,N)까지 총이익 map[x][y] 입력받기
