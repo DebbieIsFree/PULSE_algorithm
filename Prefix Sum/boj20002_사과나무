@@ -2,36 +2,47 @@
 #include <algorithm>
 using namespace std;
 
-// vector로 하면 sort할 때 편리한데, 그러면 이분탐색할 때 처음과 끝 인덱스를
-// 어떻게 넘겨줘야 할지 곤란하다고 판단해서 그냥 배열 사용
-// 그리고 data가 200,000이라서 배열 사용해도 시간초과 없음...(?ㅎㅎ)
+int map[301][301];	// 300 * 300,  index는 1부터 시작
+int DP[301][301];	// 정사각형
 
-int location[200001];
-int N, C;
-
-int	BinarySearch(int start, int end) {
-	if (start > end || C == 0)		// 시작점이 끝을 초과  or 공유기를 다 설치
-		return 0;
-
-	int mid = (start + end) / 2;
-
-	
-}
-
-
+// 누적합(구간합)에서 정사각형인지만 check 하면 될거 같은데.. + min값 구하기
 
 int main() {
-	//int N, C;
-	cin >> N >> C;
+	ios_base::sync_with_stdio(false);	cin.tie(nullptr);
 
-	for (int i = 0; i < N; i++) {
-		cin >> location[i];
+	int N;	cin >> N;
+
+	// (1,1) ~ (x,y) '누적합'
+	for (int x = 1; x <= N; x++) {
+		for (int y = 1; y <= N; y++) {
+			cin >> map[x][y];
+			DP[x][y] = DP[x - 1][y] + DP[x][y - 1] - DP[x - 1][y - 1] + map[x][y];	// (1,1)부터 (x,y)까지의 누적합 구하기
+		}
 	}
 
-	sort(location, location + N);
-	
-	//reverse(location, location + N);
+	int MAX = map[1][1];
 
+	// (a,b) ~ (x,y) '구간합' ('누적합'을 이용해서 '구간합' 구하기)
+	// 정사각형이 되도록 구간을 어떻게 줄 것이냐...
+	for (int x = 1; x <= N; x++) {
+		for (int y = 1; y <= N; y++) {
+			for (int k = 0; k <= N; k++) {
+				if (x + k <= N && y + k <= N) {
+					int tmp = DP[x + k][y + k] - DP[x - 1][y + k] - DP[x + k][y - 1] + DP[x - 1][y - 1];
+					//DP[x + k][y + k] = tmp;
+
+					MAX = max(MAX, tmp);
+					/*if (DP[x + k][y + k] < tmp)
+						DP[x + k][y + k] = tmp;*/
+				}
+				/*if (max < DP[x+k][y+k])
+					max = DP[x+k][y+k];*/
+			}
+		}
+	}
+
+
+	cout << MAX;
 
 	return 0;
 }
