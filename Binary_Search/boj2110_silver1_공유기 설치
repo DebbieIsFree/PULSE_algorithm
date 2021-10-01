@@ -5,7 +5,7 @@ using namespace std;
 int location[200000];	
 int N, C;	
 
-int	BinarySearch(int left, int right) {				
+int BinarySearch(int left, int right) {				
 	int Max = 0;		
 
 	while (left <= right) {
