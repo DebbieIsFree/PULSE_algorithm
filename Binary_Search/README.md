@@ -108,11 +108,11 @@ else {
 
 
 ```
-	if (count >= C) {		// 최소 거리차(left)를 증가시킴	
-		left = mid + 1;
-		Max = mid;		//  이때까지의 최대 거리차 mid를 저장 (이후 갱신 가능)
-		cout << "\nmax : " << Max << endl;
-	}
+if (count >= C) {		// 최소 거리차(left)를 증가시킴	
+	left = mid + 1;
+	Max = mid;		//  이때까지의 최대 거리차 mid를 저장 (이후 갱신 가능)
+	cout << "\nmax : " << Max << endl;
+}
 ```
 공유기 개수 C만큼 위치를 다 찾았으면
 '최대 거리 차'를 구하기 위해 '거리 차'를 늘려가며 가능한 경우를 탐색한다.<br><br>
@@ -120,9 +120,9 @@ else {
 <hr/>
 
 ```
-	else {		// 최대 거리차(right)를 감소시킴
-		right = mid - 1;
-	}
+else {		// 최대 거리차(right)를 감소시킴
+	right = mid - 1;
+}
 ```
 공유기 개수 C만큼 위치를 다 찾지 못했다면
 '거리 차'를 줄여가며 공유기 개수만큼 설치부터 한다.<br><br>
