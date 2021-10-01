@@ -85,16 +85,14 @@ but, 거리 차(mid)를 늘리거나, 줄였을 때(=mid값을 조절했을 때)
 맨 처음 좌표부터 다시 보는 것이었다..!<br><br><br>
 
 ```
-if (count >= C) {
-	left = mid + 1;
-	Max = mid;		
-}
-else {
-	right = mid - 1;
+if (available_from_this + mid <= location[i]) {
+	available_from_this = location[i];
+	count++;
 }
 ```
 
-3. **값이 같다면** 시작점(available_from_this)으로부터 mid만큼 떨어져 있다는 뜻이고<br>
+3. (available_from_this + mid)와 location[i]이   
+**값이 같다면** 시작점(available_from_this)으로부터 mid만큼 떨어져 있다는 뜻이고<br>
 **값이 크다면** 시작점으로부터 mid보다 더 멀리 떨어져 있다는 뜻   ☞ 많이 떨어져 있을수록 더 좋음<br>
 **값이 작다면** 시작점으로부터 mid만큼 떨어진 곳에 집이 없어서 공유기를 설치할 수 없다는 뜻
 그러므로 '값이 같거나 큰 경우'는 시작점(available_from_this)을 갱신해서 더 가능한 경우가 있는지 탐색한다<br>
