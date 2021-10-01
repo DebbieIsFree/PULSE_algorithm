@@ -41,7 +41,7 @@
 ```
 
 
-(https://user-images.githubusercontent.com/83392219/135664693-a162ae69-6536-4ce8-9e65-d706df8cc84d.JPG)
+[!initial](https://user-images.githubusercontent.com/83392219/135664693-a162ae69-6536-4ce8-9e65-d706df8cc84d.JPG)
 
 
 <br><br>
@@ -79,4 +79,4 @@ for (int x = 1; x <= N; x++) {
 ```
 <br><br>
 
-(https://user-images.githubusercontent.com/83392219/135664685-f4e2eb2c-4da5-47bd-8f35-c0020048ecd1.JPG)
+[!initial](https://user-images.githubusercontent.com/83392219/135664685-f4e2eb2c-4da5-47bd-8f35-c0020048ecd1.JPG)
