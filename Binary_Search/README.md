@@ -69,13 +69,30 @@ int BinarySearch(int left, int right) {
 }
 ```
 
+```
+	int mid = (left + right) / 2;
+```
+
 1. 거리 차 ==  mid (거리차 평균) ==  [(left(최소 거리차) + right(최대 거리차)) / 2 ]
 결국,  '거리 차'를 늘리거나 줄이는 것은
 left, right를 조절하는 것<br><br>
 
+```
+	int available_from_this = location[0];
+```
 2. 왜 다음 번 이분탐색 시 또 처음 (location[0])부터 다시 조사해햐하는가 이해가 안갔다.
 but, 거리 차(mid)를 늘리거나, 줄였을 때 이를 적용할 수 있는 경우를 찾기 위해
 맨 처음 좌표부터 다시 보는 것이었다..!<br><br><br>
+
+```
+		if (count >= C) {		
+			left = mid + 1;
+			Max = mid;		
+		}
+		else {
+			right = mid - 1;
+		}
+```
 
 3. 값이 같다면 시작점(available_from_this)으로부터 mid만큼 떨어져 있다는 뜻이고
 값이 크다면 시작점으로부터 mid보다 더 멀리 떨어져 있다는 뜻
