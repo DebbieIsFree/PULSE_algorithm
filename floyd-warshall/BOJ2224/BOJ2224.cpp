@@ -65,7 +65,6 @@ int main() {
 				if (ii == jj)
 					continue;
 				v.push_back({ ii,jj });
-				//cout << char(ii) << " => " << char(jj) << "\n";
 			}
 		}
 	}
